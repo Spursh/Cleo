@@ -5,9 +5,9 @@ import org.eclipse.swt.graphics.GC;
 /**
  * Desktop Screen, containing the bouncing balls.
  * 
- * @author	Spursh Ujjawal
+ * @author Spursh Ujjawal
  * @version 1.0
- * @since	2017-10-24 
+ * @since 2017-10-24
  */
 public class DesktopScreen {
 	int minX, maxX, minY, maxY; // Box's bounds

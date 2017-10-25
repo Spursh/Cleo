@@ -13,9 +13,9 @@ import org.eclipse.swt.widgets.Shell;
 /**
  * The control logic and main display for screen saver.
  * 
- * @author	Spursh Ujjawal
+ * @author Spursh Ujjawal
  * @version 1.0
- * @since	2017-10-24 
+ * @since 2017-10-24
  */
 public class BallCollisionResponse {
 	private final int UPDATE_RATE = 30; // Frames per second (fps)
@@ -25,12 +25,12 @@ public class BallCollisionResponse {
 	private Ball[] balls = new Ball[numberOfBalls];
 	private Canvas canvas;
 	private DesktopScreen box; // The desktop screen containing the balls
-	private int canvasWidth;  // Screen width
+	private int canvasWidth; // Screen width
 	private int canvasHeight; // Screen height
 
 	/**
-	 * Constructor to create the UI components and initialize the screen saver objects. Set the
-	 * canvas to fill the screen.
+	 * Constructor to create the UI components and initialize the screen saver
+	 * objects. Set the canvas to fill the screen.
 	 */
 
 	public BallCollisionResponse() {
@@ -52,7 +52,7 @@ public class BallCollisionResponse {
 		shell.setText("Animator");
 		shell.setLayout(new FillLayout());
 		canvas = new Canvas(shell, SWT.NO_BACKGROUND);
-		
+
 		canvas.addPaintListener(new PaintListener() {
 			public void paintControl(PaintEvent event) {
 				// Create the image to fill the canvas
@@ -75,23 +75,23 @@ public class BallCollisionResponse {
 				gcImage.dispose();
 			}
 		});
-		
+
 		shell.open();
 		Runnable runnable = new Runnable() {
 			public void run() {
 				// Start the ball bouncing
-				startScreenSaver(); 
+				startScreenSaver();
 				display.timerExec(TIMER_INTERVAL, this);
 			}
 		};
 		display.timerExec(TIMER_INTERVAL, runnable);
-		
+
 		// run the event loop as long as the window is open
 		while (!shell.isDisposed()) {
 			// read the next OS event queue and transfer it to a SWT event
 			if (!display.readAndDispatch()) {
 				// if there are currently no other OS event to process
-			    // sleep until the next OS event is available
+				// sleep until the next OS event is available
 				display.sleep();
 			}
 		}
@@ -120,8 +120,8 @@ public class BallCollisionResponse {
 	}
 
 	/**
-	 * One screen saver time-step. Update the screen saver objects, with proper collision detection
-	 * and response.
+	 * One screen saver time-step. Update the screen saver objects, with proper
+	 * collision detection and response.
 	 */
 	public void screenSaverUpdate() {
 		float timeLeft = 1.0f; // One time-step to begin with

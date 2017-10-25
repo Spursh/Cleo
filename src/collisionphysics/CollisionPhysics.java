@@ -12,9 +12,9 @@ package collisionphysics;
  * matters. Hence, we need to find the earliest (smallest) t among all the
  * detected collisions.
  *
- * @author	Spursh Ujjawal
+ * @author Spursh Ujjawal
  * @version 1.0
- * @since	2017-10-24 
+ * @since 2017-10-24
  */
 public class CollisionPhysics {
 
@@ -28,17 +28,30 @@ public class CollisionPhysics {
 	 * compute collision time and response in the given CollisionResponse object.
 	 * Otherwise, set collision time to infinity. The result is passed back in the
 	 * given CollisionResponse object.
-	 * @param pointX : x-position of the center of the point.
-	 * @param pointY : y-position of the center of the point.
-	 * @param speedX : speed in x-direction.
-	 * @param speedY : speed in y-direction.
-	 * @param radius : radius of the point.
-	 * @param rectX1 : top-left corner x of the rectangle
-	 * @param rectY1 : top-left corner y of the rectangle
-	 * @param rectX2 : bottom-right corner x of the rectangle
-	 * @param rectY2 : bottom-right corner y of the rectangle
-	 * @param timeLimit : max time to detect collision, in (0, 1] range.
-	 * @param response : If collision is detected, update the collision time and response. Otherwise, set collision time to infinity.
+	 * 
+	 * @param pointX
+	 *            : x-position of the center of the point.
+	 * @param pointY
+	 *            : y-position of the center of the point.
+	 * @param speedX
+	 *            : speed in x-direction.
+	 * @param speedY
+	 *            : speed in y-direction.
+	 * @param radius
+	 *            : radius of the point.
+	 * @param rectX1
+	 *            : top-left corner x of the rectangle
+	 * @param rectY1
+	 *            : top-left corner y of the rectangle
+	 * @param rectX2
+	 *            : bottom-right corner x of the rectangle
+	 * @param rectY2
+	 *            : bottom-right corner y of the rectangle
+	 * @param timeLimit
+	 *            : max time to detect collision, in (0, 1] range.
+	 * @param response
+	 *            : If collision is detected, update the collision time and
+	 *            response. Otherwise, set collision time to infinity.
 	 */
 	public static void pointIntersectsRectangleOuter(float pointX, float pointY, float speedX, float speedY,
 			float radius, float rectX1, float rectY1, float rectX2, float rectY2, float timeLimit,
@@ -82,15 +95,26 @@ public class CollisionPhysics {
 	 * Detect collision for a moving point hitting a vertical line, within the given
 	 * timeLimit. If collision is detected within the timeLimit, compute collision
 	 * time and response in the given CollisionResponse object. Otherwise, set
-	 * collision time to infinity. The result is passed back in the given CollisionResponse object.
-	 * @param pointX : x-position of the center of the point.
-	 * @param pointY : y-position of the center of the point.
-	 * @param speedX : speed in x-direction.
-	 * @param speedY : speed in y-direction.
-	 * @param radius : radius of the point. Zero for a true point.
-	 * @param lineX : x-value of the vertical line
-	 * @param timeLimit : max time to detect collision, in (0, 1] range.
-	 * @param response : If collision is detected, update the collision time and response. Otherwise, set collision time to infinity.
+	 * collision time to infinity. The result is passed back in the given
+	 * CollisionResponse object.
+	 * 
+	 * @param pointX
+	 *            : x-position of the center of the point.
+	 * @param pointY
+	 *            : y-position of the center of the point.
+	 * @param speedX
+	 *            : speed in x-direction.
+	 * @param speedY
+	 *            : speed in y-direction.
+	 * @param radius
+	 *            : radius of the point. Zero for a true point.
+	 * @param lineX
+	 *            : x-value of the vertical line
+	 * @param timeLimit
+	 *            : max time to detect collision, in (0, 1] range.
+	 * @param response
+	 *            : If collision is detected, update the collision time and
+	 *            response. Otherwise, set collision time to infinity.
 	 */
 	public static void pointIntersectsLineVertical(float pointX, float pointY, float speedX, float speedY, float radius,
 			float lineX, float timeLimit, CollisionResponse response) {
@@ -102,7 +126,7 @@ public class CollisionPhysics {
 		response.reset(); // Reset detected collision time to infinity
 
 		// No collision possible if speedX is zero
-		if (speedX == 0) { 
+		if (speedX == 0) {
 			return;
 		}
 
@@ -123,18 +147,29 @@ public class CollisionPhysics {
 	}
 
 	/**
-	 * Detect collision for a moving point hitting a horizontal line, within the given
-	 * timeLimit. If collision is detected within the timeLimit, compute collision
-	 * time and response in the given CollisionResponse object. Otherwise, set
-	 * collision time to infinity. The result is passed back in the given CollisionResponse object.
-	 * @param pointX : x-position of the center of the point.
-	 * @param pointY : y-position of the center of the point.
-	 * @param speedX : speed in x-direction.
-	 * @param speedY : speed in y-direction.
-	 * @param radius : radius of the point. Zero for a true point.
-	 * @param lineY : y-value of the horizontal line
-	 * @param timeLimit : max time to detect collision, in (0, 1] range.
-	 * @param response : If collision is detected, update the collision time and response. Otherwise, set collision time to infinity.
+	 * Detect collision for a moving point hitting a horizontal line, within the
+	 * given timeLimit. If collision is detected within the timeLimit, compute
+	 * collision time and response in the given CollisionResponse object. Otherwise,
+	 * set collision time to infinity. The result is passed back in the given
+	 * CollisionResponse object.
+	 * 
+	 * @param pointX
+	 *            : x-position of the center of the point.
+	 * @param pointY
+	 *            : y-position of the center of the point.
+	 * @param speedX
+	 *            : speed in x-direction.
+	 * @param speedY
+	 *            : speed in y-direction.
+	 * @param radius
+	 *            : radius of the point. Zero for a true point.
+	 * @param lineY
+	 *            : y-value of the horizontal line
+	 * @param timeLimit
+	 *            : max time to detect collision, in (0, 1] range.
+	 * @param response
+	 *            : If collision is detected, update the collision time and
+	 *            response. Otherwise, set collision time to infinity.
 	 */
 	public static void pointIntersectsLineHorizontal(float pointX, float pointY, float speedX, float speedY,
 			float radius, float lineY, float timeLimit, CollisionResponse response) {
@@ -172,19 +207,35 @@ public class CollisionPhysics {
 	 * collision time and response in the given CollisionResponse object. Otherwise,
 	 * set collision time to infinity. The result is passed back in the given
 	 * CollisionResponse object.
-	 * @param p1X : x-position of the center of point p1.
-	 * @param p1Y : y-position of the center of point p1.
-	 * @param p1SpeedX : p1's speed in x-direction.
-	 * @param p1SpeedY : p1's speed in y-direction.
-	 * @param p1Radius : p1's radius.
-	 * @param p2X : x-position of the center of point p2.
-	 * @param p2Y : y-position of the center of point p2.
-	 * @param p2SpeedX : p2's speed in x-direction.
-	 * @param p2SpeedY : p2's speed in y-direction.
-	 * @param p2Radius : p2's radius. Zero for a true point.
-	 * @param timeLimit : max time to detect collision, in (0, 1] range.
-	 * @param p1Response : If collision is detected, update the collision time and response for p1. Otherwise, set collision time to infinity.
-	 * @param p2Response : If collision is detected, update the collision time and response for p2. Otherwise, set collision time to infinity.
+	 * 
+	 * @param p1X
+	 *            : x-position of the center of point p1.
+	 * @param p1Y
+	 *            : y-position of the center of point p1.
+	 * @param p1SpeedX
+	 *            : p1's speed in x-direction.
+	 * @param p1SpeedY
+	 *            : p1's speed in y-direction.
+	 * @param p1Radius
+	 *            : p1's radius.
+	 * @param p2X
+	 *            : x-position of the center of point p2.
+	 * @param p2Y
+	 *            : y-position of the center of point p2.
+	 * @param p2SpeedX
+	 *            : p2's speed in x-direction.
+	 * @param p2SpeedY
+	 *            : p2's speed in y-direction.
+	 * @param p2Radius
+	 *            : p2's radius. Zero for a true point.
+	 * @param timeLimit
+	 *            : max time to detect collision, in (0, 1] range.
+	 * @param p1Response
+	 *            : If collision is detected, update the collision time and response
+	 *            for p1. Otherwise, set collision time to infinity.
+	 * @param p2Response
+	 *            : If collision is detected, update the collision time and response
+	 *            for p2. Otherwise, set collision time to infinity.
 	 */
 	public static void pointIntersectsMovingPoint(float p1X, float p1Y, float p1SpeedX, float p1SpeedY, float p1Radius,
 			float p2X, float p2Y, float p2SpeedX, float p2SpeedY, float p2Radius, float timeLimit,
@@ -210,16 +261,27 @@ public class CollisionPhysics {
 
 	/**
 	 * Helper method to detect the collision time (t) for two moving points.
-	 * @param p1X : x-position of the center of point p1.
-	 * @param p1Y : y-position of the center of point p1.
-	 * @param p1SpeedX : p1's speed in x-direction.
-	 * @param p1SpeedY : p1's speed in y-direction.
-	 * @param p1Radius : p1's radius. 
-	 * @param p2X : x-position of the center of point p2.
-	 * @param p2Y : y-position of the center of point p2.
-	 * @param p2SpeedX : p2's speed in x-direction.
-	 * @param p2SpeedY : p2's speed in y-direction.
-	 * @param p2Radius : p2's radius. Zero for a true point.
+	 * 
+	 * @param p1X
+	 *            : x-position of the center of point p1.
+	 * @param p1Y
+	 *            : y-position of the center of point p1.
+	 * @param p1SpeedX
+	 *            : p1's speed in x-direction.
+	 * @param p1SpeedY
+	 *            : p1's speed in y-direction.
+	 * @param p1Radius
+	 *            : p1's radius.
+	 * @param p2X
+	 *            : x-position of the center of point p2.
+	 * @param p2Y
+	 *            : y-position of the center of point p2.
+	 * @param p2SpeedX
+	 *            : p2's speed in x-direction.
+	 * @param p2SpeedY
+	 *            : p2's speed in y-direction.
+	 * @param p2Radius
+	 *            : p2's radius. Zero for a true point.
 	 * @return smaller positive t, or infinity if collision is not possible.
 	 */
 	private static float pointIntersectsMovingPointDetection(float p1X, float p1Y, float p1SpeedX, float p1SpeedY,
@@ -265,20 +327,37 @@ public class CollisionPhysics {
 
 	/**
 	 * Helper method to compute the collision response given the collision time (t),
-	 * for two moving points. Store and return the results in the two given CollisionResponse objects.
-	 * @param p1X : x-position of the center of point p1.
-	 * @param p1Y : y-position of the center of point p1.
-	 * @param p1SpeedX : p1's speed in x-direction.
-	 * @param p1SpeedY : p1's speed in y-direction.
-	 * @param p1Radius : p1's radius.
-	 * @param p2X : x-position of the center of point p2.
-	 * @param p2Y : y-position of the center of point p2.
-	 * @param p2SpeedX : p2's speed in x-direction.
-	 * @param p2SpeedY : p2's speed in y-direction.
-	 * @param p2Radius : p2's radius. Zero for a true point.
-	 * @param p1Response : To update the collision time and response for p1. Reset time to infinity if error is detected.
-	 * @param p2Response : To update the collision time and response for p2. Reset time to infinity if error is detected.
-	 * @param t : the given detected collision time.
+	 * for two moving points. Store and return the results in the two given
+	 * CollisionResponse objects.
+	 * 
+	 * @param p1X
+	 *            : x-position of the center of point p1.
+	 * @param p1Y
+	 *            : y-position of the center of point p1.
+	 * @param p1SpeedX
+	 *            : p1's speed in x-direction.
+	 * @param p1SpeedY
+	 *            : p1's speed in y-direction.
+	 * @param p1Radius
+	 *            : p1's radius.
+	 * @param p2X
+	 *            : x-position of the center of point p2.
+	 * @param p2Y
+	 *            : y-position of the center of point p2.
+	 * @param p2SpeedX
+	 *            : p2's speed in x-direction.
+	 * @param p2SpeedY
+	 *            : p2's speed in y-direction.
+	 * @param p2Radius
+	 *            : p2's radius. Zero for a true point.
+	 * @param p1Response
+	 *            : To update the collision time and response for p1. Reset time to
+	 *            infinity if error is detected.
+	 * @param p2Response
+	 *            : To update the collision time and response for p2. Reset time to
+	 *            infinity if error is detected.
+	 * @param t
+	 *            : the given detected collision time.
 	 */
 	private static void pointIntersectsMovingPointResponse(float p1X, float p1Y, float p1SpeedX, float p1SpeedY,
 			float p1Radius, float p2X, float p2Y, float p2SpeedX, float p2SpeedY, float p2Radius,
@@ -308,7 +387,8 @@ public class CollisionPhysics {
 
 		// Collision possible only if p1SpeedP - p2SpeedP > 0
 		// Needed if the two balls overlap in their initial positions
-		// Do not declare collision, so that they continue their course of movement until they are separated.
+		// Do not declare collision, so that they continue their course of movement
+		// until they are separated.
 		if (p1SpeedP - p2SpeedP <= 0) {
 			p1Response.reset(); // Set collision time to infinity
 			p2Response.reset();
@@ -344,9 +424,13 @@ public class CollisionPhysics {
 	 * Helper method to rotation vector (x, y) by theta, in Graphics coordinates.
 	 * y-axis is inverted. theta measured in counter-clockwise direction. Re-use the
 	 * double[] rotateResult to avoid repeated new operations.
-	 * @param x : x coordinate of the vector to be rotated.
-	 * @param y : y coordinate of the vector to be rotated, inverted.
-	 * @param theta : rotational angle in radians, counter-clockwise.
+	 * 
+	 * @param x
+	 *            : x coordinate of the vector to be rotated.
+	 * @param y
+	 *            : y coordinate of the vector to be rotated, inverted.
+	 * @param theta
+	 *            : rotational angle in radians, counter-clockwise.
 	 * @return An double array of 2 elements x and y, in the rotated coordinates.
 	 */
 	private static double[] rotateResult = new double[2];

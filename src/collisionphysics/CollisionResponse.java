@@ -15,15 +15,18 @@ package collisionphysics;
  * getNewY() subtract the collision time by a small threshold, instead of
  * returning the impact point.
  * 
- * @author	Spursh Ujjawal
+ * @author Spursh Ujjawal
  * @version 1.0
- * @since	2017-10-24 
+ * @since 2017-10-24
  */
 public class CollisionResponse {
-	
+
 	/** Detected collision time, reset to Float.MAX_VALUE */
 	public float t;
-	/** Time threshold to be subtracted from collision time to prevent moving over the bound. Assume that t <= 1. */
+	/**
+	 * Time threshold to be subtracted from collision time to prevent moving over
+	 * the bound. Assume that t <= 1.
+	 */
 	private static final float T_EPSILON = 0.005f;
 	/** Computed speed in x-direction after collision */
 	public float newSpeedX;
@@ -42,7 +45,9 @@ public class CollisionResponse {
 
 	/**
 	 * Copy this instance to another, used to find the earliest collision.
-	 * @param another : instance to be copied to.
+	 * 
+	 * @param another
+	 *            : instance to be copied to.
 	 */
 	public void copy(CollisionResponse another) {
 		this.t = another.t;
@@ -52,8 +57,11 @@ public class CollisionResponse {
 
 	/**
 	 * Return the x-position after impact.
-	 * @param currentX : the current x-position.
-	 * @param speedX : the current x-speed.
+	 * 
+	 * @param currentX
+	 *            : the current x-position.
+	 * @param speedX
+	 *            : the current x-speed.
 	 * @return x-position after impact.
 	 */
 	public float getNewX(float currentX, float speedX) {
@@ -67,8 +75,11 @@ public class CollisionResponse {
 
 	/**
 	 * Return the y-position after impact.
-	 * @param currentY : the current y-position.
-	 * @param speedY : the current y-speed.
+	 * 
+	 * @param currentY
+	 *            : the current y-position.
+	 * @param speedY
+	 *            : the current y-speed.
 	 * @return y-position after impact.
 	 */
 	public float getNewY(float currentY, float speedY) {
@@ -81,9 +92,13 @@ public class CollisionResponse {
 	}
 
 	/**
-	 * Return the precise x-position of the point of impact. Needed in some collision detection operations.
-	 * @param currentX : the current x-position.
-	 * @param speedX : the current x-speed.
+	 * Return the precise x-position of the point of impact. Needed in some
+	 * collision detection operations.
+	 * 
+	 * @param currentX
+	 *            : the current x-position.
+	 * @param speedX
+	 *            : the current x-speed.
 	 * @return x-position of the point of impact.
 	 */
 	public double getImpactX(float currentX, float speedX) {
@@ -91,9 +106,13 @@ public class CollisionResponse {
 	}
 
 	/**
-	 * Return the precise y-position of the point of impact. Needed in some collision detection operations.
-	 * @param currentY : the current y-position.
-	 * @param speedY : the current y-speed.
+	 * Return the precise y-position of the point of impact. Needed in some
+	 * collision detection operations.
+	 * 
+	 * @param currentY
+	 *            : the current y-position.
+	 * @param speedY
+	 *            : the current y-speed.
 	 * @return y-position of the point of impact.
 	 */
 	public double getImpactY(float currentY, float speedY) {

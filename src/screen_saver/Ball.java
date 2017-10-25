@@ -7,23 +7,23 @@ import collisionphysics.*;
 /**
  * Defining the ball's properties.
  * 
- * @author	Spursh Ujjawal
+ * @author Spursh Ujjawal
  * @version 1.0
- * @since	2017-10-24 
+ * @since 2017-10-24
  */
 public class Ball {
-	float x, y; // Ball's center x and y 
+	float x, y; // Ball's center x and y
 	float speedX, speedY; // Ball's speed per step in x and y
-	float radius; // Ball's radius 
+	float radius; // Ball's radius
 	// For collision detection and response
 	// Maintain the response of the earliest collision detected
 	// by this ball instance. Only the first collision matters!
 	CollisionResponse earliestCollisionResponse = new CollisionResponse();
 
 	/**
-	 * Constructor: User specifies velocity in speed and
-	 * moveAngle in usual Cartesian coordinates. Need to convert to speedX and
-	 * speedY in Java graphics coordinates for ease of operation.
+	 * Constructor: User specifies velocity in speed and moveAngle in usual
+	 * Cartesian coordinates. Need to convert to speedX and speedY in Java graphics
+	 * coordinates for ease of operation.
 	 */
 	public Ball(float x, float y, float radius, float speed, float angleInDegree) {
 		this.x = x;
@@ -39,9 +39,13 @@ public class Ball {
 	private CollisionResponse tempResponse = new CollisionResponse();
 
 	/**
-	 * Check if this ball collides with the desktop screen edges in the coming time-step.
-	 * @param box : desktop screen.
-	 * @param timeLimit : upper bound of the time interval.
+	 * Check if this ball collides with the desktop screen edges in the coming
+	 * time-step.
+	 * 
+	 * @param box
+	 *            : desktop screen.
+	 * @param timeLimit
+	 *            : upper bound of the time interval.
 	 */
 	public void intersect(DesktopScreen box, float timeLimit) {
 		// Call movingPointIntersectsRectangleOuter, which returns the
@@ -59,9 +63,13 @@ public class Ball {
 	private CollisionResponse anotherResponse = new CollisionResponse();
 
 	/**
-	 * Check if this ball collides with the given another ball in the interval (0,timeLimit].
-	 * @param another : another moving ball to be checked for collision.
-	 * @param timeLimit : upper bound of the time interval.
+	 * Check if this ball collides with the given another ball in the interval
+	 * (0,timeLimit].
+	 * 
+	 * @param another
+	 *            : another moving ball to be checked for collision.
+	 * @param timeLimit
+	 *            : upper bound of the time interval.
 	 */
 	public void intersect(Ball another, float timeLimit) {
 		// Call movingPointIntersectsMovingPoint() with timeLimit.
@@ -82,6 +90,7 @@ public class Ball {
 
 	/**
 	 * Update the states of this ball for the given time.
+	 * 
 	 * @param time:
 	 *            the earliest collision time detected in the system. If this ball's
 	 *            earliestCollisionResponse.time equals to time, this ball is the
@@ -95,8 +104,7 @@ public class Ball {
 			this.y = earliestCollisionResponse.getNewY(this.y, this.speedY);
 			this.speedX = earliestCollisionResponse.newSpeedX;
 			this.speedY = earliestCollisionResponse.newSpeedY;
-		} 
-		else {
+		} else {
 			// This ball does not involve in a collision. Move straight.
 			this.x += this.speedX * time;
 			this.y += this.speedY * time;
