@@ -9,5 +9,5 @@ Prerequisite:
 Steps to run the program :
 1.	Clone the project using the following command https://github.com/Spursh/Cleo.git .
 2.	Import the project into the Eclipse Workspace.
-3.	Run the project and we will have the Bouncing Ball Screen Saver. 
+3.	Run the project and we will have 11 balls bouncing in the desktop screen. They bounce when they hit the rectangular edges or collide       with the other moving balls (Bouncing Ball Screen Saver). 
 
